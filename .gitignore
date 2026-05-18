@@ -67,3 +67,9 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Private development documentation
+PROJECT_PLAN.md
+TASKS.md
+PROMPTS.md
+ARCHITECTURE_REVIEW.md
