@@ -30,6 +30,7 @@ mandaldhruv.github.io/
 ├── script.js         # Mobile menu and scroll observer logic
 ├── README.md         # Documentation
 └── IMG_... .jpg      # Profile image
+```
 🚀 How to Run Locally
 Clone the repository:
 
