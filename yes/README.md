@@ -1,62 +1,67 @@
-# 🚀 Dhruv Mandal - AI & Data Science Portfolio
+# Dhruv Mandal | AI & Data Science Portfolio
 
-Welcome to my personal portfolio repository! This responsive website showcases my journey, projects, and skills in **Artificial Intelligence, Machine Learning, and Data Science**.
+> A premium, high-performance personal portfolio showcasing expertise in Machine Learning, Generative AI, and End-to-End Data Pipelines.
 
-🔗 **Live Demo:** [https://mandaldhruv.github.io](https://mandaldhruv.github.io)
+![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-FFB800?style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vanilla JS](https://img.shields.io/badge/Vanilla_JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
----
+## 🌐 Live Website
+**[View the Live Portfolio Here](https://dhruv-mandal.web.app)**
 
-## 📖 About
-This portfolio is designed to be a clean, modern, and interactive resume hosted on the web. It highlights my technical expertise, professional experience, and academic background using a "Glassmorphism" aesthetic and smooth scroll animations.
+## 🧠 About This Repository
+This repository contains the source code for my professional portfolio. Designed with rigorous minimalism and a highly technical aesthetic, it serves as a digital resume, project showcase, and lead-generation tool for my consulting services and full-time roles in the AI/ML space.
 
-## ✨ Features
-* **Responsive Design:** Fully optimized for Desktop, Tablet, and Mobile devices.
-* **Glassmorphism UI:** Modern translucent visual effects for navigation and cards.
-* **Scroll Reveal:** Elements fade in smoothly as you scroll down the page.
-* **Interactive Mobile Menu:** Custom JavaScript toggle for smaller screens.
-* **Dark Mode:** Built with a "Midnight" dark theme by default for a premium developer look.
+## ✨ Key Features
+* **Custom ScrollSpy Navigation:** Vanilla JavaScript implementation for dynamic, precise navbar highlighting based on viewport intersection.
+* **Seamless Infinite Marquees:** CSS-only, glitch-free scrolling banners utilizing advanced flexbox sizing (`w-max`, `shrink-0`).
+* **Premium UI/UX:** High-contrast color palette (Forest Green & Warm Gold), custom SVG organic shapes, and strictly semantic HTML.
+* **Fully Responsive:** Flawless scaling and typography adjustments from 4K desktop displays down to mobile screens.
+* **Zero-Dependency Architecture:** Built purely with HTML, Tailwind CSS, and Vanilla JavaScript for maximum rendering speed and zero bloat.
 
-## 🛠️ Tech Stack
-* **HTML5**: Semantic structure.
-* **Tailwind CSS**: Utility-first styling (via CDN) for rapid layout and responsiveness.
-* **JavaScript (ES6+)**: Logic for the mobile menu and scroll animations.
-* **Google Fonts**: Typography using 'Inter' and 'Material Symbols'.
+## 🛠 Tech Stack 
+**Portfolio Architecture:**
+* **Frontend:** HTML5, Tailwind CSS
+* **Logic:** Vanilla ES6 JavaScript
+* **Hosting & Deployment:** Firebase Hosting & GitHub Pages
+* **Typography:** Plus Jakarta Sans & Pacifico
 
-## 📂 Project Structure
-```bash
-mandaldhruv.github.io/
-├── index.html        # Main structure content
-├── style.css         # Custom animations and scrollbar styles
-├── script.js         # Mobile menu and scroll observer logic
-├── README.md         # Documentation
-└── IMG_... .jpg      # Profile image
-🚀 How to Run Locally
-Clone the repository:
+**My Domain Expertise:**
+* Python, TensorFlow, PyTorch, Scikit-learn
+* LLM Fine-tuning & RAG Pipelines
+* Data Architecture (SQL, NoSQL, Docker)
+
+## 🚀 Local Development
+To view or edit this project locally, no complex build steps are required.
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/mandaldhruv/mandaldhruv.git](https://github.com/mandaldhruv/mandaldhruv.git)
+Navigate to the project directory:
 
 Bash
-git clone [https://github.com/mandaldhruv/mandaldhruv.github.io.git](https://github.com/mandaldhruv/mandaldhruv.github.io.git)
-Navigate to the folder:
+cd mandaldhruv
+Open index.html in your preferred browser, or use an extension like VS Code's Live Server for hot-reloading during development.
 
-Bash
-cd mandaldhruv.github.io
-Open index.html:
+📫 Connect With Me
+I build AI systems that turn messy data into decisions that ship. If you're building a product that requires end-to-end ML workflows or predictive modeling, let's talk.
 
-Simply double-click index.html to view it in your browser.
+Email: mandaldhruv017@gmail.com
 
-Recommended: Use the "Live Server" extension in VS Code for real-time updates.
+GitHub: @mandaldhruv
 
-🎨 Customization
-To personalize this template:
+Location: Pune, Maharashtra, India
 
-Images: Replace the .jpg file with your own photo (update the filename in index.html).
+Copyright © 2026 Dhruv Mandal. All Rights Reserved.
 
-Colors: Modify the tailwind.config script inside <head> in index.html.
 
-Links: Update the href attributes in the footer to point to your LinkedIn/GitHub.
+***
 
-📬 Contact
-Dhruv Mandal * 📧 Email: contact@dhruvmandal.com
+### How to push this to GitHub:
+Since you just created this file, run these three quick commands in your terminal to push it up to your repository:
 
-🐙 GitHub: @mandaldhruv
+1. `git add README.md`
+2. `git commit -m "Add project README"`
+3. `git push`
 
-© 2026 Dhruv Mandal. All rights reserved.
+This will give your GitHub repository a beautiful landing page when recruiters click your GitHub link!
