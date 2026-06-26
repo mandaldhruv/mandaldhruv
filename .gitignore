@@ -65,6 +65,15 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Private portfolio image assets
+yes/*.png
+yes/*.jpg
+yes/*.jpeg
+yes/*.gif
+yes/*.webp
+yes/*.svg
+yes/*.avif
+
 # dataconnect generated files
 .dataconnect
 
@@ -73,3 +82,4 @@ PROJECT_PLAN.md
 TASKS.md
 PROMPTS.md
 ARCHITECTURE_REVIEW.md
+ROADMAP.md

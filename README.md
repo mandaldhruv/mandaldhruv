@@ -34,9 +34,7 @@
 - 🧭 **Smart Navigation** — Fixed floating navbar with active section highlighting
 - 📂 **Project Showcase** — Filterable project grid with category-based filtering (ML, NLP, Web)
 - 📜 **Interactive Timeline** — Education and work experience with hover effects
-- 💼 **Engagement Models** — Professional pricing cards for consulting services
 - 📬 **Contact Form** — Professional inquiry form with field validation
-- ❓ **FAQ Accordion** — Expandable Q&A section with smooth animations
 - 🔝 **Back to Top** — Scroll-aware floating button with smooth scrolling
 - 🏷️ **Skills Showcase** — Animated percentage counters for technical skills
 - 📢 **Marquee Banners** — Auto-scrolling expertise keywords with layered design
@@ -193,9 +191,7 @@ firebase deploy --only hosting
 | **Projects** | Filterable showcase of ML, NLP, and web projects |
 | **Experience** | Timeline of education and professional roles |
 | **Tech Ecosystem** | Skills with animated percentage counters |
-| **Engagement** | Consulting pricing: Hourly, Project-Based, Retainer |
 | **Contact** | Professional inquiry form with budget selection |
-| **FAQ** | Common questions with accordion UI |
 
 ---
 
@@ -205,7 +201,6 @@ firebase deploy --only hosting
 - [x] Responsive mobile navigation
 - [x] Scroll animations and counters
 - [x] Project filtering system
-- [x] FAQ accordion
 - [ ] Migrate to Next.js 15 + TypeScript
 - [ ] Optimize images (WebP, lazy loading)
 - [ ] Add contact form backend (email delivery)
