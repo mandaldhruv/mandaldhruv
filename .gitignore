@@ -81,6 +81,11 @@ yes/*.avif
 # dataconnect generated files
 .dataconnect
 
+# Next.js build artifacts
+.next/
+out/
+*.tsbuildinfo
+
 # Private development documentation
 PROJECT_PLAN.md
 TASKS.md

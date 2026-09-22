@@ -1,14 +1,10 @@
 {
   "hosting": {
-    "public": "yes",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "**/me.png",
-      "**/heroImg.jpg",
-      "**/hero_Img.png",
-      "**/About-Img.png"
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
