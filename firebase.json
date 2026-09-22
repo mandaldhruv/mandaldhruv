@@ -4,7 +4,11 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "**/me.png",
+      "**/heroImg.jpg",
+      "**/hero_Img.png",
+      "**/About-Img.png"
     ],
     "rewrites": [
       {

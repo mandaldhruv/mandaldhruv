@@ -63,6 +63,13 @@
   </script>
 
   <style>
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont,
         'Segoe UI', sans-serif;
@@ -73,8 +80,9 @@
       position: relative;
       width: 100%;
       height: 80px;
-      overflow: visible;
-      /* let rotated green edges show */
+      overflow-x: clip;
+      overflow-y: visible;
+      /* let rotated green edges show vertically while clipping horizontal overflow */
       z-index: 30;
     }
 
@@ -158,15 +166,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
-      width: 290px;
+      gap: 6px;
+      width: 280px;
+      max-width: 90vw;
       z-index: 20;
       pointer-events: none;
     }
 
     .skills-clean span {
-      padding: 6px 14px;
-      font-size: 12px;
+      padding: 5px 12px;
+      font-size: 11px;
       font-weight: 600;
       border-radius: 999px;
       white-space: nowrap;
@@ -302,8 +311,9 @@
           </div>
 
           <!-- Desktop Nav Links -->
-          <div class="hidden items-center gap-8 text-sm font-medium text-white md:flex">
+          <div class="hidden items-center gap-7 text-sm font-medium text-white md:flex">
             <a href="#home" class="transition hover:text-gold">Home</a>
+            <a href="#skills" class="transition hover:text-gold">Focus</a>
             <a href="#about" class="transition hover:text-gold">About</a>
             <a href="#projects" class="transition hover:text-gold">Projects</a>
             <a href="#experience" class="transition hover:text-gold">Experience</a>
@@ -322,7 +332,7 @@
           <!-- Mobile Menu Button -->
           <button id="navToggle"
             class="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white md:hidden"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav">
             <svg id="navIconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
@@ -339,6 +349,7 @@
           class="mt-3 hidden rounded-2xl bg-forest px-4 py-4 text-sm text-white shadow-lg shadow-forest/30 md:hidden">
           <div class="flex flex-col gap-3">
             <a href="#home" class="rounded-full px-3 py-2 transition hover:bg-white/5">Home</a>
+            <a href="#skills" class="rounded-full px-3 py-2 transition hover:bg-white/5">Focus</a>
             <a href="#about" class="rounded-full px-3 py-2 transition hover:bg-white/5">About</a>
             <a href="#projects" class="rounded-full px-3 py-2 transition hover:bg-white/5">Projects</a>
             <a href="#experience" class="rounded-full px-3 py-2 transition hover:bg-white/5">Experience</a>
@@ -409,7 +420,7 @@
         <section class="relative flex justify-center lg:justify-end overflow-visible">
           <div class="relative h-[320px] w-[320px] max-w-full sm:h-[360px] sm:w-[360px] overflow-visible">
             <!-- Decorative curved green stroke (left of blob) -->
-            <svg class="absolute -left-10 top-1/2 -translate-y-1/2 w-10 h-48 z-0" viewBox="0 0 40 200" fill="none"
+            <svg class="hidden sm:block absolute -left-10 top-1/2 -translate-y-1/2 w-10 h-48 z-0" viewBox="0 0 40 200" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M35 10 C10 50, 5 100, 15 150 C20 170, 30 185, 35 195" stroke="#1E392A" stroke-width="3"
                 stroke-linecap="round" fill="none" />
@@ -417,16 +428,19 @@
 
             <!-- Organic Blob Background Shape -->
             <div class="absolute inset-x-0 z-0 bg-gold/90 shadow-lg shadow-gold/40"
-              style="top: 6rem; bottom: 0; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;"></div>
+              style="top: 5rem; bottom: 0; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;"></div>
 
-            <!-- Portrait (head breaks out above blob) -->
-            <img src="hero-image.png" alt="Portrait of Dhruv Mandal"
-              class="absolute left-4 right-4 w-[calc(100%-2rem)] h-[120%] object-cover object-top z-10"
-              style="top: -1rem; border-radius: 55% 35% 5% 5% / 40% 25% 0% 0%;" />
+            <!-- Portrait (head breaks out cleanly above blob) -->
+            <picture>
+              <source srcset="dhruv-hero.webp" type="image/webp" />
+              <img src="dhruv-hero.png" alt="Portrait of Dhruv Mandal"
+                class="absolute left-2 right-2 sm:left-4 sm:right-4 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] h-[115%] object-contain object-bottom z-10"
+                style="bottom: 0;" />
+            </picture>
 
             <!-- Badge 1: Circular availability stamp (Top Right) -->
             <div
-              class="absolute -top-8 -right-8 z-20 w-24 h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
+              class="absolute -top-6 -right-4 sm:-top-8 sm:-right-8 z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
               <!-- Rotating text -->
               <svg class="absolute inset-0 w-full h-full stamp-text" viewBox="0 0 100 100">
                 <defs>
@@ -441,9 +455,9 @@
             </div>
 
             <!-- Badge 2: "RAG Pipelines" Pill -->
-            <div class="absolute -left-6 bottom-16 z-20">
+            <div class="absolute -left-2 sm:-left-6 bottom-14 sm:bottom-16 z-20">
               <div
-                class="relative inline-flex items-center gap-2 rounded-full bg-[#1E392A] px-4 py-2 text-xs font-bold text-white shadow-lg -rotate-3">
+                class="relative inline-flex items-center gap-2 rounded-full bg-[#1E392A] px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-bold text-white shadow-lg -rotate-3">
                 RAG Pipelines
                 <!-- Cursor SVG -->
                 <svg class="absolute -bottom-3 -right-2 w-5 h-5" viewBox="0 0 24 24" fill="#1E392A"
@@ -455,9 +469,9 @@
             </div>
 
             <!-- Badge 3: "LLMs in Production" Pill -->
-            <div class="absolute -right-4 bottom-4 z-20">
+            <div class="absolute -right-2 sm:-right-4 bottom-2 sm:bottom-4 z-20">
               <div
-                class="relative inline-flex items-center gap-2 rounded-full bg-[#FFB800] px-4 py-2 text-xs font-bold text-forest shadow-lg rotate-6">
+                class="relative inline-flex items-center gap-2 rounded-full bg-[#FFB800] px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-bold text-forest shadow-lg rotate-6">
                 LLMs in Production
                 <!-- Cursor SVG -->
                 <svg class="absolute -bottom-3 -left-1 w-5 h-5" viewBox="0 0 24 24" fill="#1E392A"
@@ -528,7 +542,7 @@
   <!-- ============================ -->
   <!-- Phase 2: Current Focus -->
   <!-- ============================ -->
-  <section id="skills" class="w-full bg-[#F8F9FA] py-24">
+  <section id="skills" class="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
     <div class="max-w-7xl mx-auto px-6">
       <header class="text-center">
         <p class="text-sm font-semibold tracking-wide text-gray-500">— What I Solve</p>
@@ -608,7 +622,7 @@
   <!-- ============================ -->
   <!-- About Me Section (Olivia-Style) -->
   <!-- ============================ -->
-  <section id="about" class="relative w-full overflow-hidden" data-reveal="section"
+  <section id="about" class="relative w-full overflow-hidden scroll-mt-28" data-reveal="section"
     style="background: radial-gradient(ellipse at 30% 50%, #1f3d2b 0%, #162e21 40%, #0f2419 100%); padding: 100px 0;">
 
     <!-- Subtle noise texture overlay -->
@@ -617,7 +631,7 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center" style="gap: 60px;">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-24 lg:gap-16">
 
         <!-- ============ LEFT: Image Block ============ -->
         <div class="relative flex justify-center lg:justify-start">
@@ -637,8 +651,11 @@
             </div>
 
             <!-- Portrait — head stays above blob (Task 2) -->
-            <img src="About-Image.png" alt="Dhruv Mandal" class="relative z-10 w-full h-full object-cover object-top"
-              style="transform: translateY(-20px) scale(1.05); border-radius: 0;" />
+            <picture>
+              <source srcset="dhruv-about.webp" type="image/webp" />
+              <img src="About-Image.png" alt="Dhruv Mandal" class="relative z-10 w-full h-full object-cover object-top"
+                style="transform: translateY(-20px) scale(1.05); border-radius: 0;" />
+            </picture>
             <!-- Clean Skill Capsules (readable, no overlap) -->
             <div class="skills-clean">
               <span>Machine Learning</span>
@@ -734,7 +751,7 @@
   <!-- ============================ -->
   <!-- Phase 3: My Latest Projects -->
   <!-- ============================ -->
-  <section id="projects" class="w-full bg-[#F8F9FA] py-24">
+  <section id="projects" class="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Header Row -->
       <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -745,7 +762,7 @@
           </h2>
         </div>
         <div class="hidden sm:flex">
-          <a href="https://github.com/" target="_blank" rel="noreferrer"
+          <a href="https://github.com/mandaldhruv?tab=repositories" target="_blank" rel="noreferrer"
             class="inline-flex items-center rounded-full border border-forest px-6 py-2 text-sm font-semibold text-forest bg-white hover:bg-gold/10 hover:border-gold transition-colors">
             View All Projects +
           </a>
@@ -816,8 +833,9 @@
               interaction data. Ranked leads by conversion probability, reducing sales team
               outreach waste by ~30%. Deployed as a REST API on FastAPI.
             </p>
-            <a href="#"
-              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold">
+            <a href="https://github.com/mandaldhruv/lead-scoring-engine" target="_blank" rel="noreferrer"
+              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold"
+              aria-label="View Lead Scoring Engine repository on GitHub">
               View Repository ↗
             </a>
           </div>
@@ -826,7 +844,7 @@
         <!-- Card 2 -->
         <article
           class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          data-category="nlp web">
+          data-category="nlp web genai">
           <!-- Image Container -->
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-200">
             <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
@@ -856,8 +874,9 @@
               fine-tuned DistilBERT model. Processes 500+ tweets/min. Used by a D2C brand
               to track launch-week perception.
             </p>
-            <a href="#"
-              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold">
+            <a href="https://github.com/mandaldhruv/brand-sentiment-monitor" target="_blank" rel="noreferrer"
+              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold"
+              aria-label="View Brand Sentiment Monitor repository on GitHub">
               View Repository ↗
             </a>
           </div>
@@ -866,7 +885,7 @@
         <!-- Card 3 -->
         <article
           class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          data-category="ml nlp">
+          data-category="ml nlp genai">
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-200">
             <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
               alt="Medical document classifier"
@@ -887,8 +906,9 @@
               documents into 14 ICD-10 categories. Achieved 91% macro F1 on held-out
               test set — 18 points above TF-IDF baseline.
             </p>
-            <a href="#"
-              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold">
+            <a href="https://github.com/mandaldhruv/medical-document-classifier" target="_blank" rel="noreferrer"
+              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold"
+              aria-label="View Medical Document Classifier repository on GitHub">
               View Repository ↗
             </a>
           </div>
@@ -920,8 +940,9 @@
               engineering on 40+ behavioral signals, SHAP-based explainability output for
               customer success teams, retrained weekly via Airflow DAG.
             </p>
-            <a href="#"
-              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold">
+            <a href="https://github.com/mandaldhruv/churn-prediction-pipeline" target="_blank" rel="noreferrer"
+              class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold"
+              aria-label="View Churn Prediction Pipeline repository on GitHub">
               View Repository ↗
             </a>
           </div>
@@ -933,7 +954,7 @@
   <!-- ============================ -->
   <!-- Phase 4: Experience & Work -->
   <!-- ============================ -->
-  <section id="experience" class="w-full bg-white py-24">
+  <section id="experience" class="w-full bg-white py-24 scroll-mt-28">
     <div class="max-w-7xl mx-auto px-6">
       <header class="text-center">
         <p class="text-sm font-semibold tracking-wide text-gray-500">— Education &amp; Work</p>
@@ -1031,7 +1052,7 @@
   <!-- ============================ -->
   <!-- Phase 5: Technical Ecosystem -->
   <!-- ============================ -->
-  <section id="technical" class="relative w-full bg-[#F8F9FA] py-24 overflow-hidden" data-countup-root>
+  <section id="technical" class="relative w-full bg-[#F8F9FA] py-24 overflow-hidden scroll-mt-28" data-countup-root>
     <!-- Radial glow -->
     <div class="pointer-events-none absolute inset-0 -z-10" style="
         background: radial-gradient(circle at 30% 0%, rgba(255, 184, 0, 0.18), rgba(255,184,0,0) 55%),
@@ -1156,7 +1177,7 @@
   <!-- ========================= -->
   <!-- Contact Form -->
   <!-- ========================= -->
-  <section id="contact" class="w-full bg-[#F8F9FA] py-24">
+  <section id="contact" class="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <!-- Info -->
@@ -1180,7 +1201,7 @@
                 <path d="M4 6h16v12H4z" />
                 <path d="m4 7 8 6 8-6" />
               </svg>
-              <p class="text-gray-700 font-medium">mandaldhruv017@gmail.com</p>
+              <a href="mailto:mandaldhruv017@gmail.com" class="text-gray-700 font-medium hover:text-gold transition-colors">mandaldhruv017@gmail.com</a>
             </div>
 
             <div class="flex items-center gap-4">
@@ -1189,7 +1210,7 @@
                 <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z" />
                 <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
               </svg>
-              <p class="text-gray-700 font-medium">Pune, Maharashtra, India</p>
+              <span class="text-gray-700 font-medium">Pune, Maharashtra, India</span>
             </div>
 
             <div class="flex items-center gap-4">
@@ -1199,14 +1220,14 @@
                 <path
                   d="M14 22v-3.8c0-1.1.4-2 1.1-2.7 1.4-.1 2.4-.4 3.1-1.1.8-.7 1.3-1.7 1.3-3.1 0-1.1-.4-2.1-1-2.8.1-.6.5-2.1-.1-3-1-.2-2.7 1-3.5 1.8-1-.3-2.1-.3-3.2-.1-.8-.8-2.5-2-3.5-1.8-.6.9-.2 2.4-.1 3-.6.7-1 1.7-1 2.8 0 1.4.4 2.4 1.3 3.1.7.7 1.7 1 3.1 1.1.7.7 1.1 1.6 1.1 2.7V22" />
               </svg>
-              <p class="text-gray-700 font-medium">github.com/mandaldhruv</p>
+              <a href="https://github.com/mandaldhruv" target="_blank" rel="noreferrer" class="text-gray-700 font-medium hover:text-gold transition-colors">github.com/mandaldhruv</a>
             </div>
           </div>
         </div>
 
         <!-- Form -->
         <div class="bg-white rounded-3xl shadow-lg p-8">
-          <form action="#" method="post" class="space-y-6">
+          <form id="contactForm" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label class="text-sm font-medium text-forest" for="name">Your Name</label>
@@ -1239,10 +1260,13 @@
               </div>
             </div>
 
-            <button type="submit"
-              class="inline-flex items-center justify-center rounded-full bg-[#1E392A] text-white px-8 py-3 mt-6 hover:bg-[#FFB800] hover:text-[#1E392A] transition-colors font-bold">
-              Submit Message ↗
+            <button type="submit" id="submitBtn"
+              class="inline-flex items-center justify-center rounded-full bg-[#1E392A] text-white px-8 py-3 mt-6 hover:bg-[#FFB800] hover:text-[#1E392A] transition-colors font-bold disabled:opacity-60 disabled:cursor-not-allowed">
+              <span id="btnText">Submit Message ↗</span>
             </button>
+
+            <!-- Status Notification Toast -->
+            <div id="formStatus" class="hidden rounded-xl p-4 text-sm font-medium transition-all duration-300"></div>
           </form>
         </div>
       </div>
@@ -1308,7 +1332,7 @@
               </svg>
             </a>
             <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/" target="_blank" rel="noreferrer"
+            <a href="https://linkedin.com/in/dhruvmandal" target="_blank" rel="noreferrer"
               class="group/social flex h-10 w-10 items-center justify-center rounded-full bg-[#1E392A] text-white transition-all duration-300 hover:bg-[#FFB800] hover:text-[#1E392A] hover:-translate-y-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -1316,7 +1340,7 @@
               </svg>
             </a>
             <!-- Twitter/X -->
-            <a href="https://twitter.com/" target="_blank" rel="noreferrer"
+            <a href="https://x.com/mandaldhruv" target="_blank" rel="noreferrer"
               class="group/social flex h-10 w-10 items-center justify-center rounded-full bg-[#1E392A] text-white transition-all duration-300 hover:bg-[#FFB800] hover:text-[#1E392A] hover:-translate-y-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -1332,6 +1356,8 @@
           <div class="flex flex-col gap-3">
             <a href="#home"
               class="footer-link text-gray-500 hover:text-[#FFB800] transition-colors text-sm w-fit">Home</a>
+            <a href="#skills"
+              class="footer-link text-gray-500 hover:text-[#FFB800] transition-colors text-sm w-fit">Focus</a>
             <a href="#about"
               class="footer-link text-gray-500 hover:text-[#FFB800] transition-colors text-sm w-fit">About</a>
             <a href="#projects"
@@ -1349,7 +1375,8 @@
         <div>
           <h4 class="text-[#1E392A] font-bold mb-6">Contact</h4>
           <div class="flex flex-col gap-3">
-            <p class="text-gray-500 text-sm">mandaldhruv017@gmail.com</p>
+            <a href="mailto:mandaldhruv017@gmail.com"
+              class="text-gray-500 hover:text-[#FFB800] transition-colors text-sm">mandaldhruv017@gmail.com</a>
             <p class="text-gray-500 text-sm">Pune, Maharashtra, India</p>
           </div>
         </div>
@@ -1450,21 +1477,64 @@
     })();
   </script>
 
-  <!-- Simple Mobile Nav Toggle Script -->
+  <!-- Mobile Nav Toggle & Auto-Close Script -->
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const iconOpen = document.getElementById('navIconOpen');
-    const iconClose = document.getElementById('navIconClose');
+    (function () {
+      const navToggle = document.getElementById('navToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const iconOpen = document.getElementById('navIconOpen');
+      const iconClose = document.getElementById('navIconClose');
 
-    if (navToggle && mobileNav) {
-      navToggle.addEventListener('click', () => {
+      if (!navToggle || !mobileNav) return;
+
+      function closeNav() {
+        if (!mobileNav.classList.contains('hidden')) {
+          mobileNav.classList.add('hidden');
+          if (iconOpen) iconOpen.classList.remove('hidden');
+          if (iconClose) iconClose.classList.add('hidden');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      function openNav() {
+        mobileNav.classList.remove('hidden');
+        if (iconOpen) iconOpen.classList.add('hidden');
+        if (iconClose) iconClose.classList.remove('hidden');
+        navToggle.setAttribute('aria-expanded', 'true');
+      }
+
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         const isHidden = mobileNav.classList.contains('hidden');
-        mobileNav.classList.toggle('hidden', !isHidden);
-        iconOpen.classList.toggle('hidden', !isHidden);
-        iconClose.classList.toggle('hidden', isHidden);
+        if (isHidden) {
+          openNav();
+        } else {
+          closeNav();
+        }
       });
-    }
+
+      // Auto-close when clicking any menu link inside mobileNav
+      const navLinks = mobileNav.querySelectorAll('a');
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          closeNav();
+        });
+      });
+
+      // Close when clicking outside of navToggle and mobileNav
+      document.addEventListener('click', (e) => {
+        if (!mobileNav.contains(e.target) && !navToggle.contains(e.target)) {
+          closeNav();
+        }
+      });
+
+      // Close when pressing the Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeNav();
+        }
+      });
+    })();
   </script>
 
 
@@ -1501,8 +1571,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Select all sections that have an ID
       const sections = document.querySelectorAll('main[id], section[id]');
-      // Select all nav links in desktop and mobile menus
-      const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.bg-white), #mobileNav a[href^="#"]:not(.bg-white)');
+      // Select all nav links in desktop and mobile menus (excluding CTA gold buttons)
+      const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.bg-gold), #mobileNav a[href^="#"]:not(.bg-gold)');
       // Setup the observer to trigger when a section hits the middle 50% of the screen
       const observerOptions = {
         root: null,
@@ -1515,7 +1585,7 @@
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
 
-            // 1. Remove the yellow color from ALL links
+            // 1. Remove the yellow color from ALL text links
             navLinks.forEach(link => {
               link.classList.remove('text-gold');
               link.classList.add('text-white'); // For desktop default
@@ -1534,6 +1604,91 @@
       // Tell the observer to watch every section
       sections.forEach(section => observer.observe(section));
     });
+  </script>
+
+  <!-- Contact Form Submission & Feedback Handler -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const formStatus = document.getElementById('formStatus');
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = form.elements['name']?.value?.trim() || '';
+        const email = form.elements['email']?.value?.trim() || '';
+        const budget = form.elements['budget']?.value || '';
+        const message = form.elements['message']?.value?.trim() || '';
+
+        if (!name || !email || !message) {
+          showStatus('Please fill in all required fields.', 'error');
+          return;
+        }
+
+        // Set loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Sending Message...';
+        hideStatus();
+
+        try {
+          // Try sending via Web3Forms endpoint
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              access_key: 'YOUR_ACCESS_KEY_HERE',
+              name: name,
+              email: email,
+              budget: budget,
+              message: message,
+              subject: `Portfolio Inquiry from ${name} (${budget})`,
+              from_name: 'Dhruv Portfolio'
+            })
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            showStatus('✓ Thank you, ' + name + '! Your message has been sent successfully. I will get back to you shortly.', 'success');
+            form.reset();
+          } else {
+            // Fallback to mailto so the message is never lost
+            triggerMailtoFallback(name, email, budget, message);
+          }
+        } catch (err) {
+          // Fallback to mailto on any network error
+          triggerMailtoFallback(name, email, budget, message);
+        } finally {
+          submitBtn.disabled = false;
+          btnText.textContent = 'Submit Message ↗';
+        }
+      });
+
+      function triggerMailtoFallback(name, email, budget, message) {
+        const subject = encodeURIComponent(`Portfolio Inquiry from ${name} (${budget})`);
+        const body = encodeURIComponent(`Hi Dhruv,\n\nName: ${name}\nEmail: ${email}\nBudget: ${budget}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:mandaldhruv017@gmail.com?subject=${subject}&body=${body}`;
+        showStatus('Message opened in your email client! You can also email me directly at mandaldhruv017@gmail.com', 'success');
+        form.reset();
+      }
+
+      function showStatus(msg, type) {
+        if (!formStatus) return;
+        formStatus.textContent = msg;
+        formStatus.className = type === 'success'
+          ? 'rounded-xl p-4 text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 mt-4'
+          : 'rounded-xl p-4 text-sm font-medium bg-rose-50 text-rose-800 border border-rose-200 mt-4';
+        formStatus.classList.remove('hidden');
+      }
+
+      function hideStatus() {
+        if (!formStatus) return;
+        formStatus.classList.add('hidden');
+      }
+    })();
   </script>
 </body>
 
