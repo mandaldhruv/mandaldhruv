@@ -5,41 +5,104 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
   }
 
   body {
-    @apply bg-offwhite text-forest antialiased overflow-x-hidden;
-    font-family: var(--font-jakarta), system-ui, sans-serif;
+    @apply bg-offwhite text-forest antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
   }
 }
 
-/* Custom continuous marquee animation */
-@keyframes marqueeLeft {
+/* ===== Marquee Wrapper (Layered approach) ===== */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow-x: clip;
+  overflow-y: visible;
+  z-index: 30;
+}
+
+/* Layer 2: Dark green rotated plate (behind yellow) */
+.marquee-bg-rotated {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: #1F3D2B;
+  transform: rotate(-3deg);
+  transform-origin: center;
+  z-index: 1;
+}
+
+/* Layer 1: Yellow marquee bar (perfectly straight, on top) */
+.marquee-bar {
+  position: relative;
+  z-index: 2;
+  background: #FFB800;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Marquee seamless scroll track */
+.marquee-track {
+  display: flex;
+  will-change: transform;
+  animation: marqueeTrack 30s linear infinite;
+}
+
+@keyframes marqueeTrack {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.33%); }
 }
 
-@keyframes marqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-marquee-left {
+.marquee-content {
   display: flex;
-  width: max-content;
-  animation: marqueeLeft 28s linear infinite;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
 }
 
-.animate-marquee-right {
-  display: flex;
-  width: max-content;
-  animation: marqueeRight 32s linear infinite;
+.marquee-content .marquee-text {
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1E392A;
+  white-space: nowrap;
 }
 
-/* Pause marquee on hover */
-.animate-marquee-left:hover,
-.animate-marquee-right:hover {
-  animation-play-state: paused;
+.marquee-content .marquee-sep {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #1E392A;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+@media (min-width: 640px) {
+  .marquee-content {
+    gap: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .marquee-content .marquee-text {
+    font-size: 1.75rem;
+  }
+
+  .marquee-content .marquee-sep {
+    font-size: 2.5rem;
+  }
 }
 
 /* Rotating stamp */
@@ -49,5 +112,87 @@
 }
 
 .animate-spin-slow {
-  animation: spinSlow 16s linear infinite;
+  animation: spinSlow 12s linear infinite;
+}
+
+/* ===== Clean Skill Capsules (flex-wrap, readable) ===== */
+.skills-clean {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  width: 280px;
+  max-width: 90vw;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.skills-clean span {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.01em;
+}
+
+/* Alternating colors: odd=yellow, even=dark */
+.skills-clean span:nth-child(odd) {
+  background: #FFB800;
+  color: #1E392A;
+}
+
+.skills-clean span:nth-child(even) {
+  background: #1E392A;
+  color: #ffffff;
+  border: 1px solid rgba(255, 184, 0, 0.15);
+}
+
+@media (min-width: 640px) {
+  .skills-clean {
+    width: 340px;
+    gap: 10px;
+    bottom: -15px;
+  }
+
+  .skills-clean span {
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Footer link underline animation */
+.footer-link {
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #FFB800;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Footer marquee */
+@keyframes marqueeFooter {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-footer {
+  animation: marqueeFooter 15s linear infinite;
 }

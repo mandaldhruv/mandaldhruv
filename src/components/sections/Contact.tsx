@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/data/portfolio";
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function Contact() {
   const [loading, setLoading] = useState(false);
@@ -65,25 +64,38 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#F8F9FA] py-24 scroll-mt-24">
+    <section id="contact" className="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Info */}
           <div>
             <p className="text-sm font-semibold tracking-wide text-forest">— Let's Connect</p>
-            <h2 className="mt-2 text-3xl md:text-5xl font-bold text-forest leading-tight">
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-forest leading-tight">
               Let’s build something that ships.
             </h2>
 
-            <p className="text-gray-600 mt-4 mb-8 leading-relaxed">
-              If you’re building a product that turns unstructured data into decisions — and need someone who can own the ML workflow end-to-end — I want to hear about it.
+            <p className="text-gray-600 mt-4 mb-8">
+              If you’re building a product that turns unstructured data into decisions —
+              and need someone who can own the ML workflow end-to-end — I want to hear
+              about it.
             </p>
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-forest/5 flex items-center justify-center text-forest">
-                  <Mail className="h-5 w-5" />
-                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-forest"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4 4h16v16H4z" opacity="0" />
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
                 <a
                   href={`mailto:${siteConfig.email}`}
                   className="text-gray-700 font-medium hover:text-gold transition-colors"
@@ -93,18 +105,36 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-forest/5 flex items-center justify-center text-forest">
-                  <MapPin className="h-5 w-5" />
-                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-forest"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z" />
+                  <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                </svg>
                 <span className="text-gray-700 font-medium">{siteConfig.location}</span>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-forest/5 flex items-center justify-center text-forest">
-                  <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                  </svg>
-                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-forest"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 19c-4.3 1.5-4.3-2.3-5.7-2.7" />
+                  <path d="M14 22v-3.8c0-1.1.4-2 1.1-2.7 1.4-.1 2.4-.4 3.1-1.1.8-.7 1.3-1.7 1.3-3.1 0-1.1-.4-2.1-1-2.8.1-.6.5-2.1-.1-3-1-.2-2.7 1-3.5 1.8-1-.3-2.1-.3-3.2-.1-.8-.8-2.5-2-3.5-1.8-.6.9-.2 2.4-.1 3-.6.7-1 1.7-1 2.8 0 1.4.4 2.4 1.3 3.1.7.7 1.7 1 3.1 1.1.7.7 1.1 1.6 1.1 2.7V22" />
+                </svg>
                 <a
                   href={siteConfig.socials.github}
                   target="_blank"
@@ -118,11 +148,11 @@ export function Contact() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 border border-gray-100">
+          <div className="bg-white rounded-3xl shadow-lg p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-sm font-semibold text-forest" htmlFor="name">
+                  <label className="text-sm font-medium text-forest" htmlFor="name">
                     Your Name
                   </label>
                   <input
@@ -131,12 +161,12 @@ export function Contact() {
                     type="text"
                     required
                     placeholder="Your full name"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-semibold text-forest" htmlFor="email">
+                  <label className="text-sm font-medium text-forest" htmlFor="email">
                     Email
                   </label>
                   <input
@@ -145,29 +175,28 @@ export function Contact() {
                     type="email"
                     required
                     placeholder="you@example.com"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   />
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="text-sm font-semibold text-forest" htmlFor="budget">
+                  <label className="text-sm font-medium text-forest" htmlFor="budget">
                     Budget Range
                   </label>
                   <select
                     id="budget"
                     name="budget"
-                    defaultValue="₹25k - ₹1L"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   >
-                    <option value="Under ₹25k">Under ₹25k</option>
-                    <option value="₹25k - ₹1L">₹25k - ₹1L</option>
-                    <option value="₹1L - ₹3L">₹1L - ₹3L</option>
-                    <option value="₹3L+">₹3L+</option>
+                    <option value="under-25k">Under ₹25k</option>
+                    <option value="25k-1l">₹25k - ₹1L</option>
+                    <option value="1l-3l">₹1L - ₹3L</option>
+                    <option value="3l-plus">₹3L+</option>
                   </select>
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="text-sm font-semibold text-forest" htmlFor="message">
+                  <label className="text-sm font-medium text-forest" htmlFor="message">
                     Your Message
                   </label>
                   <textarea
@@ -175,35 +204,30 @@ export function Contact() {
                     name="message"
                     rows={4}
                     required
-                    placeholder="Tell me about your product, timeline, and what you need built..."
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"
-                  />
+                    placeholder="Tell me what you're building, what you need, and your timeline."
+                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
+                  ></textarea>
                 </div>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-forest text-white px-8 py-3.5 hover:bg-gold hover:text-forest transition-all font-bold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-full bg-[#1E392A] text-white px-8 py-3 mt-6 hover:bg-[#FFB800] hover:text-[#1E392A] transition-colors font-bold disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>{loading ? "Sending Message..." : "Submit Message"}</span>
-                <Send className="w-4 h-4" />
+                <span>{loading ? "Sending..." : "Submit Message ↗"}</span>
               </button>
 
+              {/* Status Toast */}
               {status && (
                 <div
-                  className={`rounded-2xl p-4 text-sm flex items-start gap-3 border ${
+                  className={`mt-4 rounded-xl p-4 text-sm font-medium transition-all ${
                     status.type === "success"
-                      ? "bg-emerald-50 text-emerald-900 border-emerald-200"
-                      : "bg-rose-50 text-rose-900 border-rose-200"
+                      ? "bg-forest/10 text-forest border border-forest/20"
+                      : "bg-red-50 text-red-700 border border-red-200"
                   }`}
                 >
-                  {status.type === "success" ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  ) : (
-                    <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
-                  )}
-                  <span>{status.message}</span>
+                  {status.message}
                 </div>
               )}
             </form>

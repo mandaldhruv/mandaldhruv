@@ -7,21 +7,21 @@ import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Technical } from "@/components/sections/Technical";
 import { Contact } from "@/components/sections/Contact";
+import { BackToTop } from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-offwhite text-forest selection:bg-gold/30 selection:text-forest">
+    <div className="min-h-screen bg-offwhite text-forest antialiased">
       <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <Focus />
-        <About />
-        <Projects />
-        <Experience />
-        <Technical />
-        <Contact />
-      </main>
+      <Hero />
+      <Focus />
+      <About />
+      <Projects />
+      <Experience />
+      <Technical />
+      <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 }

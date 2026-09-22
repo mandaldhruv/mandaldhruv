@@ -20,10 +20,11 @@ module.exports = {
         },
         offwhite: '#FDFDFD',
         lightBg: '#F8F9FA',
+        grayBody: '#4B5563',
       },
       fontFamily: {
-        jakarta: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
-        pacifico: ['var(--font-pacifico)', 'cursive'],
+        jakarta: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        pacifico: ['Pacifico', 'cursive'],
       },
     },
   },

@@ -1,17 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { projectsData } from "@/data/portfolio";
-import { ArrowUpRight } from "lucide-react";
 
-type FilterType = "all" | "ml" | "nlp" | "genai";
+type FilterType = "all" | "ml" | "nlp" | "genai" | "web";
 
 const filters: { id: FilterType; label: string }[] = [
   { id: "all", label: "All" },
   { id: "ml", label: "Machine Learning" },
   { id: "nlp", label: "NLP" },
   { id: "genai", label: "GenAI" },
+  { id: "web", label: "Web Apps" },
 ];
 
 export function Projects() {
@@ -23,22 +22,22 @@ export function Projects() {
   });
 
   return (
-    <section id="projects" className="w-full bg-[#F8F9FA] py-24 scroll-mt-24">
+    <section id="projects" className="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
+        {/* Header Row */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-semibold tracking-wide text-gold">— My Portfolio</p>
-            <h2 className="mt-2 text-3xl md:text-5xl font-bold text-forest">
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-forest">
               My Latest Projects
             </h2>
           </div>
-          <div>
+          <div className="hidden sm:flex">
             <a
               href="https://github.com/mandaldhruv?tab=repositories"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-full border border-forest px-6 py-2.5 text-sm font-semibold text-forest bg-white hover:bg-gold/15 hover:border-gold transition-all shadow-sm hover:scale-[1.02]"
+              className="inline-flex items-center rounded-full border border-forest px-6 py-2 text-sm font-semibold text-forest bg-white hover:bg-gold/10 hover:border-gold transition-colors"
             >
               View All Projects +
             </a>
@@ -46,15 +45,16 @@ export function Projects() {
         </div>
 
         {/* Filter Pills */}
-        <div className="mt-10 flex gap-3 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mt-10 -mx-1 flex gap-4 overflow-x-auto whitespace-nowrap px-1 scrollbar-none">
           {filters.map((f) => (
             <button
               key={f.id}
+              type="button"
               onClick={() => setActiveFilter(f.id)}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-all ${
+              className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
                 activeFilter === f.id
-                  ? "bg-gold text-forest shadow-md scale-105"
-                  : "border border-gray-300 text-forest bg-white hover:border-gold"
+                  ? "bg-gold text-forest shadow-sm"
+                  : "border border-gray-300 text-forest bg-transparent hover:border-gold"
               }`}
             >
               {f.label}
@@ -67,23 +67,21 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+              className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              {/* Image Banner */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
-                <Image
+              {/* Image Container */}
+              <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-200">
+                <img
                   src={project.image}
                   alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Tech Tags */}
                 <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="rounded-full bg-black/40 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md"
+                      className="rounded-full bg-black/30 px-3 py-1 text-xs font-semibold text-white backdrop-blur"
                     >
                       {tag}
                     </span>
@@ -91,25 +89,23 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Text Block */}
+              {/* Text Content */}
               <div className="flex flex-1 flex-col p-8">
-                <h3 className="text-2xl font-bold text-forest group-hover:text-gold transition-colors">
+                <h3 className="text-2xl font-bold text-forest">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-3 text-sm text-gray-600">
                   {project.description}
                 </p>
-                <div className="mt-auto pt-6">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-forest transition-colors hover:text-gold"
-                  >
-                    View Repository
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-forest transition-colors group-hover:text-gold"
+                  aria-label={`View ${project.title} repository on GitHub`}
+                >
+                  View Repository ↗
+                </a>
               </div>
             </article>
           ))}

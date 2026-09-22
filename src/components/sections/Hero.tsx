@@ -1,71 +1,89 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { siteConfig } from "@/data/portfolio";
-import { Play, Download, MousePointer } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-20 overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
-          {/* Left Column: Copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-start"
-          >
-            {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-forest/5 px-4 py-1.5 text-xs font-semibold text-forest shadow-sm mb-6">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              Accepting Select Projects · Open to Roles
+    <>
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 pb-10">
+        {/* Hero Section */}
+        <main id="home" className="scroll-mt-40 mt-28 grid items-center gap-12 lg:mt-32 lg:grid-cols-2 lg:gap-16">
+          {/* Left Column: Text */}
+          <section className="space-y-6 lg:space-y-8">
+            {/* Micro Tag (Dashed Box with Sizing Handles) */}
+            <div className="relative inline-flex items-center gap-2 border-dashed border-2 border-gray-400 rounded-lg bg-transparent px-4 py-2 text-xs font-medium text-gray-500">
+              {/* Corner sizing handles */}
+              <div className="absolute -top-1 -left-1 w-2 h-2 border border-yellow-500 bg-white"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 border border-yellow-500 bg-white"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 border border-yellow-500 bg-white"></div>
+              <div className="absolute -bottom-1 -right-1 w-2 h-2 border border-yellow-500 bg-white"></div>
+              <span>Accepting Select Projects · Open to Roles</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl font-extrabold tracking-tight text-forest sm:text-5xl lg:text-6xl leading-[1.12]">
-              I build AI systems that turn messy data into decisions that ship.
-            </h1>
-
-            {/* Sub-headline */}
-            <p className="mt-6 text-lg text-grayBody max-w-lg leading-relaxed">
-              {siteConfig.bio}
-            </p>
-
-            {/* CTA Group */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-forest/20 transition-all hover:bg-forest-dark hover:scale-[1.03] active:scale-[0.98]"
+            {/* Headline */}
+            <div className="space-y-2">
+              <h1
+                className="text-3xl font-bold tracking-tight text-forest sm:text-4xl lg:text-5xl"
+                style={{ lineHeight: 1.15 }}
               >
-                View Projects
-                <Play className="w-3.5 h-3.5 fill-gold text-gold" />
-              </Link>
+                I build{" "}
+                <span className="relative inline-block text-gold pb-1 mb-1">
+                  AI systems
+                  <span className="absolute left-0 bottom-0 w-full h-[3px] bg-gold rounded-full"></span>
+                </span>{" "}
+                that turn messy data into decisions that ship.
+              </h1>
 
+              {/* Subtext */}
+              <p className="max-w-xl text-sm leading-relaxed text-grayBody sm:text-base">
+                Specializing in NLP pipelines, LLM fine-tuning, and production-grade ML —
+                for startups and teams who need it done right the first time.
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#projects"
+                className="group inline-flex items-center rounded-full bg-forest shadow-md shadow-forest/30 transition hover:bg-forest/90"
+              >
+                <span className="px-6 py-2.5 text-sm font-semibold text-white">View Projects</span>
+                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gold text-forest text-sm -ml-1">
+                  ▶
+                </span>
+              </a>
               <a
                 href={siteConfig.cvUrl}
                 download="Dhruv_Mandal_CV.pdf"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-3.5 text-sm font-bold text-forest shadow-sm transition-all hover:border-gold hover:bg-gold/10 hover:scale-[1.03]"
+                className="inline-flex items-center justify-center rounded-full border border-gray-800 px-8 py-3 text-sm font-medium text-gray-800 transition-colors hover:bg-gray-50"
               >
-                <Download className="w-4 h-4 text-forest" />
                 Download CV
               </a>
             </div>
-          </motion.div>
+          </section>
 
-          {/* Right Column: Hero Visual Blob */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative h-[330px] w-[330px] sm:h-[380px] sm:w-[380px]">
-              {/* Organic Gold Blob Background */}
+          {/* Right Column: Visuals */}
+          <section className="relative flex justify-center lg:justify-end overflow-visible">
+            <div className="relative h-[320px] w-[320px] max-w-full sm:h-[360px] sm:w-[360px] overflow-visible">
+              {/* Decorative curved green stroke (left of blob) */}
+              <svg
+                className="hidden sm:block absolute -left-10 top-1/2 -translate-y-1/2 w-10 h-48 z-0"
+                viewBox="0 0 40 200"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M35 10 C10 50, 5 100, 15 150 C20 170, 30 185, 35 195"
+                  stroke="#1E392A"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+
+              {/* Organic Blob Background Shape */}
               <div
-                className="absolute inset-x-0 z-0 bg-gold/90 shadow-xl shadow-gold/30"
+                className="absolute inset-x-0 z-0 bg-gold/90 shadow-lg shadow-gold/40"
                 style={{
                   top: "5rem",
                   bottom: 0,
@@ -73,75 +91,119 @@ export function Hero() {
                 }}
               />
 
-              {/* Head-out Transparent Portrait */}
-              <div className="absolute inset-0 z-10 flex items-end justify-center pointer-events-none">
-                <Image
-                  src="/dhruv-hero.webp"
-                  alt="Dhruv Mandal - AI Engineer"
-                  width={380}
-                  height={450}
-                  priority
-                  className="h-[120%] w-auto object-contain object-bottom select-none"
+              {/* Portrait (head breaks out cleanly above blob) */}
+              <picture>
+                <source srcSet="/dhruv-hero.webp" type="image/webp" />
+                <img
+                  src="/dhruv-hero.png"
+                  alt="Portrait of Dhruv Mandal"
+                  className="absolute left-2 right-2 sm:left-4 sm:right-4 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] h-[115%] object-contain object-bottom z-10"
+                  style={{ bottom: 0 }}
                 />
-              </div>
+              </picture>
 
-              {/* Badge 1: Circular Rotating Stamp */}
-              <div className="absolute -top-6 -right-4 sm:-top-8 sm:-right-6 z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
+              {/* Badge 1: Circular availability stamp (Top Right) */}
+              <div className="absolute -top-6 -right-4 sm:-top-8 sm:-right-8 z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
+                {/* Rotating text */}
                 <svg className="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 100 100">
                   <defs>
-                    <path
-                      id="stampCircleNext"
-                      d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
-                    />
+                    <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
                   </defs>
-                  <text fill="#FFB800" fontSize="10.5" fontWeight="bold" letterSpacing="2.5">
-                    <textPath href="#stampCircleNext">
-                      OPEN TO PROJECTS ✦ 2026 ✦ AI EXPERT ✦
-                    </textPath>
+                  <text fill="white" fontSize="11" fontWeight="700" letterSpacing="3">
+                    <textPath href="#circlePath">OPEN TO PROJECTS ✦ 2026 ✦ AI EXPERT ✦</textPath>
                   </text>
                 </svg>
-                <span className="text-gold text-sm font-bold">↗</span>
+                {/* Center arrow */}
+                <span className="relative z-10 text-gold text-xl font-bold">↗</span>
               </div>
 
               {/* Badge 2: "RAG Pipelines" Pill */}
               <div className="absolute -left-2 sm:-left-6 bottom-14 sm:bottom-16 z-20">
-                <div className="relative inline-flex items-center gap-2 rounded-full bg-forest px-4 py-2 text-xs font-bold text-white shadow-lg -rotate-3 border border-white/10">
+                <div className="relative inline-flex items-center gap-2 rounded-full bg-[#1E392A] px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-bold text-white shadow-lg -rotate-3">
                   RAG Pipelines
-                  <MousePointer className="w-3.5 h-3.5 text-gold" />
+                  {/* Cursor SVG */}
+                  <svg
+                    className="absolute -bottom-3 -right-2 w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="#1E392A"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86h6.3c.45 0 .67-.54.35-.85L5.85 3.21c-.31-.31-.85-.09-.85.35v0Z" />
+                  </svg>
                 </div>
               </div>
 
               {/* Badge 3: "LLMs in Production" Pill */}
-              <div className="absolute -right-2 sm:-right-4 bottom-3 sm:bottom-4 z-20">
-                <div className="relative inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-xs font-bold text-forest shadow-lg rotate-6">
+              <div className="absolute -right-2 sm:-right-4 bottom-2 sm:bottom-4 z-20">
+                <div className="relative inline-flex items-center gap-2 rounded-full bg-[#FFB800] px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-bold text-forest shadow-lg rotate-6">
                   LLMs in Production
-                  <MousePointer className="w-3.5 h-3.5 text-forest" />
+                  {/* Cursor SVG */}
+                  <svg
+                    className="absolute -bottom-3 -left-1 w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="#1E392A"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86h6.3c.45 0 .67-.54.35-.85L5.85 3.21c-.31-.31-.85-.09-.85.35v0Z" />
+                  </svg>
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </section>
+        </main>
       </div>
 
-      {/* Marquee Banner Strip */}
-      <div className="mt-20 w-full overflow-hidden bg-forest py-4 border-y border-forest-dark rotate-[-1deg] scale-105">
-        <div className="animate-marquee-left flex items-center gap-8 whitespace-nowrap text-sm font-bold uppercase tracking-wider text-white">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-8">
-              <span className="text-gold">RAG Pipelines at Scale</span>
-              <span className="text-white/40">✱</span>
-              <span>LLM Fine-tuning</span>
-              <span className="text-white/40">✱</span>
-              <span className="text-gold">Real-time ML Systems</span>
-              <span className="text-white/40">✱</span>
-              <span>Agentic AI Workflows</span>
-              <span className="text-white/40">✱</span>
-              <span className="text-gold">NLP for Business Intelligence</span>
-              <span className="text-white/40">✱</span>
+      {/* ============================== */}
+      {/* Premium Marquee: Layered + Rotated Background */}
+      {/* ============================== */}
+      <div className="marquee-wrapper">
+        {/* Layer 2: Dark green rotated plate (behind) */}
+        <div className="marquee-bg-rotated"></div>
+        {/* Layer 1: Yellow marquee bar (straight, on top) */}
+        <div className="marquee-bar">
+          <div className="marquee-track">
+            {/* Copy 1 */}
+            <div className="marquee-content">
+              <span className="marquee-text">RAG Pipelines at Scale</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">LLM Fine-tuning</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Real-time ML Systems</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Agentic AI Workflows</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">NLP for Business Intelligence</span>
+              <span className="marquee-sep">✱</span>
             </div>
-          ))}
+            {/* Copy 2 (seamless loop) */}
+            <div className="marquee-content" aria-hidden="true">
+              <span className="marquee-text">RAG Pipelines at Scale</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">LLM Fine-tuning</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Real-time ML Systems</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Agentic AI Workflows</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">NLP for Business Intelligence</span>
+              <span className="marquee-sep">✱</span>
+            </div>
+            {/* Copy 3 (wide-screen safety) */}
+            <div className="marquee-content" aria-hidden="true">
+              <span className="marquee-text">RAG Pipelines at Scale</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">LLM Fine-tuning</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Real-time ML Systems</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">Agentic AI Workflows</span>
+              <span className="marquee-sep">✱</span>
+              <span className="marquee-text">NLP for Business Intelligence</span>
+              <span className="marquee-sep">✱</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }

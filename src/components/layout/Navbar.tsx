@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -21,7 +20,7 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navLinks.map((l) => l.href.substring(1));
-      const scrollPos = window.scrollY + 200;
+      const scrollPos = window.scrollY + 250;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -42,81 +41,85 @@ export function Navbar() {
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-forest/95 px-5 py-3 shadow-lg shadow-forest/20 backdrop-blur-md border border-white/10 transition-all">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-forest/95 px-5 py-3 shadow-lg shadow-forest/20 backdrop-blur-md">
         {/* Left: Logo */}
-        <Link href="#home" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-bold text-forest shadow-md transition-transform group-hover:scale-105">
+        <div className="flex items-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-semibold text-forest shadow-md">
             DM
           </div>
-          <span className="hidden text-sm font-medium text-white/80 sm:inline group-hover:text-white transition-colors">
+          <span className="hidden text-sm font-medium text-white/70 sm:inline">
             Dhruv Mandal
           </span>
-        </Link>
+        </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Nav Links */}
         <div className="hidden items-center gap-7 text-sm font-medium text-white md:flex">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className={`transition-colors hover:text-gold ${
-                activeSection === link.href.substring(1) ? "text-gold font-semibold" : "text-white/90"
+              className={`transition hover:text-gold ${
+                activeSection === link.href.substring(1) ? "text-gold font-semibold" : "text-white"
               }`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
-        {/* Contact CTA */}
+        {/* Right: Contact Button (Desktop) */}
         <div className="hidden md:flex md:items-center">
-          <Link
+          <a
             href="#contact"
-            className="inline-flex items-center rounded-full bg-gold px-5 py-2 text-sm font-bold text-forest shadow-sm transition-all hover:bg-gold-light hover:shadow-md hover:scale-[1.03]"
+            className="inline-flex items-center rounded-full bg-gold px-5 py-2 text-sm font-semibold text-forest shadow-sm hover:brightness-105 transition"
           >
             Contact Me
-          </Link>
+          </a>
         </div>
 
-        {/* Mobile Nav Button */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white md:hidden hover:bg-white/10 transition-colors"
+          className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white md:hidden"
           aria-label="Toggle navigation"
           aria-expanded={isOpen}
         >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
       </nav>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Nav Menu */}
       {isOpen && (
         <div
-          className="mt-3 rounded-2xl bg-forest px-4 py-4 text-sm text-white shadow-xl shadow-forest/40 md:hidden border border-white/10 animate-in fade-in slide-in-from-top-2 duration-200"
+          className="mt-3 rounded-2xl bg-forest px-4 py-4 text-sm text-white shadow-lg shadow-forest/30 md:hidden animate-in fade-in duration-200"
           onClick={() => setIsOpen(false)}
         >
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`rounded-xl px-4 py-2.5 transition-colors hover:bg-white/10 ${
-                  activeSection === link.href.substring(1)
-                    ? "text-gold font-bold bg-white/5"
-                    : "text-white"
-                }`}
+                className="rounded-full px-3 py-2 transition hover:bg-white/5"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link
+          </div>
+          <div className="mt-4 border-t border-white/10 pt-4">
+            <a
               href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-2 text-center rounded-xl bg-gold py-2.5 font-bold text-forest hover:bg-gold-light transition-colors"
+              className="inline-flex w-full items-center justify-center rounded-full bg-gold px-4 py-2 text-sm font-semibold text-forest shadow-sm"
             >
               Contact Me
-            </Link>
+            </a>
           </div>
         </div>
       )}
