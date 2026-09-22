@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#244835"/>
+      <stop offset="100%" stop-color="#14261c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#FFB800"/>
+    </linearGradient>
+  </defs>
+  <!-- Background with subtle gold rim -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#forestGrad)" stroke="#FFB800" stroke-width="2.5" stroke-opacity="0.8"/>
+  <!-- Decorative small accent ring -->
+  <circle cx="50" cy="14" r="3" fill="#FFB800"/>
+  <!-- Monogram DM -->
+  <text x="32" y="38" text-anchor="middle" dominant-baseline="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-weight="900" font-size="26" fill="url(#goldGrad)" letter-spacing="-1">DM</text>
+</svg>

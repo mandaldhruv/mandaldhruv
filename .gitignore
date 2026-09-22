@@ -76,6 +76,7 @@ yes/*.avif
 !yes/dhruv-hero.webp
 !yes/dhruv-hero.png
 !yes/dhruv-about.webp
+!yes/favicon.svg
 
 # dataconnect generated files
 .dataconnect
