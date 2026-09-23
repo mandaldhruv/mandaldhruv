@@ -44,9 +44,11 @@ export function Footer() {
             {/* Column 1: Brand */}
             <div>
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <div className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#FFB800] text-xs sm:text-sm font-bold text-[#1E392A] shadow-md">
-                  DM
-                </div>
+                <img
+                  src="/dm-logo.webp"
+                  alt="DM Logo"
+                  className="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-xl shadow-md"
+                />
                 <span className="text-base sm:text-lg font-bold text-[#1E392A]">{siteConfig.name}</span>
               </div>
               <p className="text-gray-500 text-xs sm:text-sm mt-3 sm:mt-6 leading-relaxed">

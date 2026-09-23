@@ -9,8 +9,8 @@ export function Focus() {
           </h2>
         </header>
 
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-8">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 md:p-6 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80 flex flex-col">
             <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +36,13 @@ export function Focus() {
             </p>
             <a
               href="#projects"
-              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 mt-auto inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See NLP projects <span aria-hidden="true">→</span>
             </a>
           </article>
 
-          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 md:p-6 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80 flex flex-col">
             <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,13 +68,13 @@ export function Focus() {
             </p>
             <a
               href="#projects"
-              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 mt-auto inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See LLM projects <span aria-hidden="true">→</span>
             </a>
           </article>
 
-          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 md:p-6 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80 flex flex-col">
             <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export function Focus() {
             </p>
             <a
               href="#projects"
-              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 mt-auto inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See pipeline projects <span aria-hidden="true">→</span>
             </a>

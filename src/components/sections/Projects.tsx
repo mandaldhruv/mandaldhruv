@@ -63,7 +63,7 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {filteredProjects.map((project) => (
             <article
               key={project.id}
@@ -90,7 +90,7 @@ export function Projects() {
               </div>
 
               {/* Text Content */}
-              <div className="flex flex-1 flex-col p-5 sm:p-8">
+              <div className="flex flex-1 flex-col p-5 md:p-6 lg:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-forest">
                   {project.title}
                 </h3>

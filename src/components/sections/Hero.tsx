@@ -5,13 +5,13 @@ import { siteConfig } from "@/data/portfolio";
 export function Hero() {
   return (
     <>
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8 pb-8 sm:pb-10">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-8 pt-4 sm:pt-6 md:pt-8 lg:pt-8 pb-8 sm:pb-10 lg:pb-12">
         {/* Hero Section */}
-        <main id="home" className="scroll-mt-40 mt-20 sm:mt-28 grid items-center gap-8 sm:gap-12 lg:mt-32 lg:grid-cols-2 lg:gap-16">
-          {/* Left Column: Text */}
-          <section className="space-y-4 sm:space-y-6 lg:space-y-8">
+        <main id="home" className="scroll-mt-40 mt-16 sm:mt-24 md:mt-28 lg:mt-32 grid items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left Column: Text (Left on mobile, Centered on tablet, Left on desktop) */}
+          <section className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 flex flex-col items-start md:items-center lg:items-start text-left md:text-center lg:text-left">
             {/* Micro Tag (Dashed Box with Sizing Handles) */}
-            <div className="relative inline-flex items-center gap-2 border-dashed border-[1.5px] sm:border-2 border-gray-400 rounded-lg bg-transparent px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-medium text-gray-500">
+            <div className="relative inline-flex items-center gap-2 border-dashed border-[1.5px] sm:border-2 border-gray-400 rounded-lg bg-transparent px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-medium text-gray-500 mx-0 md:mx-auto lg:mx-0">
               {/* Corner sizing handles */}
               <div className="absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 border border-yellow-500 bg-white"></div>
               <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 border border-yellow-500 bg-white"></div>
@@ -21,8 +21,8 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <div className="space-y-2 sm:space-y-3">
-              <h1 className="text-[28px] sm:text-4xl lg:text-5xl font-bold tracking-tight text-forest leading-[1.2] sm:leading-[1.15]">
+            <div className="space-y-2 sm:space-y-3 max-w-xl md:max-w-2xl lg:max-w-none">
+              <h1 className="text-[28px] sm:text-4xl md:text-[38px] lg:text-5xl font-bold tracking-tight text-forest leading-[1.2] lg:leading-[1.15]">
                 I build{" "}
                 <span className="relative inline-block text-gold pb-0.5 sm:pb-1 mb-0.5 sm:mb-1">
                   AI systems
@@ -32,14 +32,14 @@ export function Hero() {
               </h1>
 
               {/* Subtext */}
-              <p className="max-w-xl text-xs sm:text-sm leading-relaxed text-grayBody sm:text-base">
+              <p className="text-xs sm:text-sm md:text-[15px] lg:text-base leading-relaxed text-grayBody max-w-xl md:mx-auto lg:mx-0">
                 Specializing in NLP pipelines, LLM fine-tuning, and production-grade ML —
                 for startups and teams who need it done right the first time.
               </p>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
+            <div className="flex flex-wrap items-center justify-start md:justify-center lg:justify-start gap-3 sm:gap-4 pt-1 w-full">
               <a
                 href="#projects"
                 className="group inline-flex items-center rounded-full bg-forest shadow-md shadow-forest/20 transition hover:bg-forest/90"
@@ -62,11 +62,11 @@ export function Hero() {
           </section>
 
           {/* Right Column: Visuals */}
-          <section className="relative flex justify-center lg:justify-end overflow-visible py-4 sm:py-0">
-            <div className="relative h-[270px] w-[270px] sm:h-[340px] sm:w-[340px] lg:h-[360px] lg:w-[360px] max-w-full overflow-visible">
+          <section className="relative flex justify-center lg:justify-end overflow-visible py-4 sm:py-6 lg:py-0">
+            <div className="relative h-[270px] w-[270px] sm:h-[300px] sm:w-[300px] md:h-[330px] md:w-[330px] lg:h-[360px] lg:w-[360px] max-w-full overflow-visible">
               {/* Decorative curved green stroke (left of blob) */}
               <svg
-                className="hidden sm:block absolute -left-10 top-1/2 -translate-y-1/2 w-10 h-48 z-0"
+                className="hidden md:block lg:block absolute -left-8 md:-left-9 lg:-left-10 top-1/2 -translate-y-1/2 w-8 md:w-9 lg:w-10 h-40 md:h-44 lg:h-48 z-0 pointer-events-none"
                 viewBox="0 0 40 200"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ export function Hero() {
               </picture>
 
               {/* Badge 1: Circular availability stamp (Top Right) */}
-              <div className="absolute -top-4 -right-2 sm:-top-8 sm:-right-8 z-20 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
+              <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 md:-top-5 md:-right-5 lg:-top-8 lg:-right-8 z-20 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-forest flex items-center justify-center shadow-xl">
                 {/* Rotating text */}
                 <svg className="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 100 100">
                   <defs>
@@ -113,12 +113,12 @@ export function Hero() {
                   </text>
                 </svg>
                 {/* Center arrow */}
-                <span className="relative z-10 text-gold text-base sm:text-xl font-bold">↗</span>
+                <span className="relative z-10 text-gold text-base sm:text-lg lg:text-xl font-bold">↗</span>
               </div>
 
               {/* Badge 2: "RAG Pipelines" Pill */}
-              <div className="absolute -left-2 sm:-left-6 bottom-10 sm:bottom-16 z-20">
-                <div className="relative inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#1E392A] px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-xs font-bold text-white shadow-lg -rotate-3">
+              <div className="absolute -left-2 sm:-left-3 md:-left-4 lg:-left-6 bottom-10 sm:bottom-12 md:bottom-14 lg:bottom-16 z-20">
+                <div className="relative inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#1E392A] px-2.5 sm:px-3.5 lg:px-4 py-1 sm:py-1.5 lg:py-2 text-[11px] sm:text-xs font-bold text-white shadow-lg -rotate-3">
                   RAG Pipelines
                   {/* Cursor SVG */}
                   <svg
@@ -133,8 +133,8 @@ export function Hero() {
               </div>
 
               {/* Badge 3: "LLMs in Production" Pill */}
-              <div className="absolute -right-2 sm:-right-4 bottom-1.5 sm:bottom-4 z-20">
-                <div className="relative inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#FFB800] px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-xs font-bold text-forest shadow-lg rotate-6">
+              <div className="absolute -right-2 sm:-right-3 md:-right-3 lg:-right-4 bottom-1.5 sm:bottom-3 md:bottom-3.5 lg:bottom-4 z-20">
+                <div className="relative inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#FFB800] px-2.5 sm:px-3.5 lg:px-4 py-1 sm:py-1.5 lg:py-2 text-[11px] sm:text-xs font-bold text-forest shadow-lg rotate-6">
                   LLMs in Production
                   {/* Cursor SVG */}
                   <svg

@@ -47,7 +47,7 @@ export function About() {
             </div>
 
             {/* Image area — overflow visible */}
-            <div className="relative w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] lg:w-[380px] lg:h-[380px] overflow-visible">
+            <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] overflow-visible">
               {/* Yellow circular blob — 75% size, anchored to bottom center */}
               <div
                 className="absolute z-0"
@@ -87,7 +87,7 @@ export function About() {
           </div>
 
           {/* ============ RIGHT: Content Block ============ */}
-          <div className="text-white mt-4 sm:mt-0">
+          <div className="text-white mt-4 sm:mt-0 max-w-2xl mx-auto lg:max-w-none w-full">
             {/* Small Label */}
             <p className="text-xs sm:text-sm font-semibold tracking-wider text-gold mb-2 sm:mb-3">
               — About Me
@@ -111,7 +111,7 @@ export function About() {
             </p>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 mt-6 sm:mt-8 gap-2 sm:gap-4 border-t border-white/10 pt-5 sm:pt-6">
+            <div className="grid grid-cols-3 mt-6 sm:mt-8 gap-2 sm:gap-4 md:gap-6 border-t border-white/10 pt-5 sm:pt-6">
               <div>
                 <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gold leading-none">
                   Top <AnimatedCounter target={5} />%

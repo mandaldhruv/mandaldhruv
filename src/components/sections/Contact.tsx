@@ -66,9 +66,9 @@ export function Contact() {
   return (
     <section id="contact" className="w-full bg-[#F8F9FA] py-12 sm:py-20 lg:py-24 scroll-mt-20 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16">
           {/* Info */}
-          <div>
+          <div className="max-w-2xl lg:max-w-none mx-auto lg:mx-0 w-full">
             <p className="text-xs sm:text-sm font-semibold tracking-wide text-forest">— Let's Connect</p>
             <h2 className="mt-2 text-2xl sm:text-4xl md:text-5xl font-bold text-forest leading-tight">
               Let’s build something that ships.
@@ -148,7 +148,7 @@ export function Contact() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8 border border-gray-100">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-7 lg:p-8 border border-gray-100 max-w-2xl lg:max-w-none mx-auto lg:mx-0 w-full">
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>

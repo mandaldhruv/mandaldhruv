@@ -53,12 +53,12 @@ export function Technical() {
         </div>
 
         {/* Skill Cards */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 items-stretch">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 items-stretch">
           {/* Card 1 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -73,10 +73,10 @@ export function Technical() {
           </div>
 
           {/* Card 2 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -90,10 +90,10 @@ export function Technical() {
           </div>
 
           {/* Card 3 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -108,10 +108,10 @@ export function Technical() {
           </div>
 
           {/* Card 4 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -125,10 +125,10 @@ export function Technical() {
           </div>
 
           {/* Card 5 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -143,10 +143,10 @@ export function Technical() {
           </div>
 
           {/* Card 6 */}
-          <div className="group bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 border border-gray-100/60">
+          <div className="group bg-white rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col items-center justify-center p-4 md:p-5 lg:p-8 border border-gray-100/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-12 sm:h-12 text-[#1E392A] mb-2 sm:mb-4"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#1E392A] mb-2 sm:mb-3 lg:mb-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

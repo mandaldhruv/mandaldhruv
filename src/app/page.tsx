@@ -11,7 +11,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-offwhite text-forest antialiased">
+    <div className="min-h-screen bg-offwhite text-forest antialiased overflow-x-hidden w-full max-w-full">
       <Navbar />
       <Hero />
       <Focus />
