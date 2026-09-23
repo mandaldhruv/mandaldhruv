@@ -64,27 +64,27 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="contact" className="w-full bg-[#F8F9FA] py-12 sm:py-20 lg:py-24 scroll-mt-20 sm:scroll-mt-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Info */}
           <div>
-            <p className="text-sm font-semibold tracking-wide text-forest">— Let's Connect</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-forest leading-tight">
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-forest">— Let's Connect</p>
+            <h2 className="mt-2 text-2xl sm:text-4xl md:text-5xl font-bold text-forest leading-tight">
               Let’s build something that ships.
             </h2>
 
-            <p className="text-gray-600 mt-4 mb-8">
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-3 sm:mt-4 mb-6 sm:mb-8 leading-relaxed">
               If you’re building a product that turns unstructured data into decisions —
               and need someone who can own the ML workflow end-to-end — I want to hear
               about it.
             </p>
 
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:gap-6">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-forest"
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-forest"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -98,16 +98,16 @@ export function Contact() {
                 </svg>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-gray-700 font-medium hover:text-gold transition-colors"
+                  className="text-xs sm:text-sm md:text-base text-gray-700 font-medium hover:text-gold transition-colors"
                 >
                   {siteConfig.email}
                 </a>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-forest"
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-forest"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -118,13 +118,13 @@ export function Contact() {
                   <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z" />
                   <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
                 </svg>
-                <span className="text-gray-700 font-medium">{siteConfig.location}</span>
+                <span className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">{siteConfig.location}</span>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-forest"
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-forest"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -139,7 +139,7 @@ export function Contact() {
                   href={siteConfig.socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-gray-700 font-medium hover:text-gold transition-colors"
+                  className="text-xs sm:text-sm md:text-base text-gray-700 font-medium hover:text-gold transition-colors"
                 >
                   github.com/mandaldhruv
                 </a>
@@ -148,11 +148,11 @@ export function Contact() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-3xl shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8 border border-gray-100">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="text-sm font-medium text-forest" htmlFor="name">
+                  <label className="text-xs sm:text-sm font-medium text-forest" htmlFor="name">
                     Your Name
                   </label>
                   <input
@@ -161,12 +161,12 @@ export function Contact() {
                     type="text"
                     required
                     placeholder="Your full name"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
+                    className="mt-1.5 w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-forest" htmlFor="email">
+                  <label className="text-xs sm:text-sm font-medium text-forest" htmlFor="email">
                     Email
                   </label>
                   <input
@@ -175,18 +175,18 @@ export function Contact() {
                     type="email"
                     required
                     placeholder="you@example.com"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
+                    className="mt-1.5 w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   />
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="text-sm font-medium text-forest" htmlFor="budget">
+                  <label className="text-xs sm:text-sm font-medium text-forest" htmlFor="budget">
                     Budget Range
                   </label>
                   <select
                     id="budget"
                     name="budget"
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
+                    className="mt-1.5 w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   >
                     <option value="under-25k">Under ₹25k</option>
                     <option value="25k-1l">₹25k - ₹1L</option>
@@ -196,7 +196,7 @@ export function Contact() {
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="text-sm font-medium text-forest" htmlFor="message">
+                  <label className="text-xs sm:text-sm font-medium text-forest" htmlFor="message">
                     Your Message
                   </label>
                   <textarea
@@ -205,7 +205,7 @@ export function Contact() {
                     rows={4}
                     required
                     placeholder="Tell me what you're building, what you need, and your timeline."
-                    className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
+                    className="mt-1.5 w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors"
                   ></textarea>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center rounded-full bg-[#1E392A] text-white px-8 py-3 mt-6 hover:bg-[#FFB800] hover:text-[#1E392A] transition-colors font-bold disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#1E392A] text-white px-6 py-2.5 sm:px-8 sm:py-3 mt-4 sm:mt-6 hover:bg-[#FFB800] hover:text-[#1E392A] transition-colors text-xs sm:text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed shadow-md"
               >
                 <span>{loading ? "Sending..." : "Submit Message ↗"}</span>
               </button>
@@ -221,7 +221,7 @@ export function Contact() {
               {/* Status Toast */}
               {status && (
                 <div
-                  className={`mt-4 rounded-xl p-4 text-sm font-medium transition-all ${
+                  className={`mt-4 rounded-xl p-3 sm:p-4 text-xs sm:text-sm font-medium transition-all ${
                     status.type === "success"
                       ? "bg-forest/10 text-forest border border-forest/20"
                       : "bg-red-50 text-red-700 border border-red-200"

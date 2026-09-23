@@ -29,13 +29,13 @@ export function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#1E392A] text-white shadow-lg shadow-black/20 transition-all duration-300 hover:bg-[#FFB800] hover:text-[#1E392A] hover:-translate-y-1 ${
+      className={`fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#1E392A] text-white shadow-lg shadow-black/20 transition-all duration-300 hover:bg-[#FFB800] hover:text-[#1E392A] hover:-translate-y-1 ${
         visible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5"
+        className="h-4 w-4 sm:h-5 sm:w-5"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

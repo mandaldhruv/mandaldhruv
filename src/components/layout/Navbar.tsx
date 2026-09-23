@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -40,14 +39,14 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-forest/95 px-5 py-3 shadow-lg shadow-forest/20 backdrop-blur-md">
+    <header className="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-forest/95 px-4 py-2 sm:px-5 sm:py-3 shadow-lg shadow-forest/20 backdrop-blur-md">
         {/* Left: Logo */}
         <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-sm font-semibold text-forest shadow-md">
+          <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-gold text-xs sm:text-sm font-semibold text-forest shadow-md">
             DM
           </div>
-          <span className="hidden text-sm font-medium text-white/70 sm:inline">
+          <span className="text-xs font-semibold text-white/90 sm:text-sm sm:font-medium sm:text-white/70">
             Dhruv Mandal
           </span>
         </div>
@@ -80,17 +79,17 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-white/20 p-1.5 sm:p-2 text-white md:hidden"
           aria-label="Toggle navigation"
           aria-expanded={isOpen}
         >
           {isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
         </button>
@@ -99,24 +98,28 @@ export function Navbar() {
       {/* Mobile Nav Menu */}
       {isOpen && (
         <div
-          className="mt-3 rounded-2xl bg-forest px-4 py-4 text-sm text-white shadow-lg shadow-forest/30 md:hidden animate-in fade-in duration-200"
+          className="mt-2.5 rounded-2xl bg-forest/98 backdrop-blur-lg px-4 py-4 text-sm text-white shadow-xl shadow-forest/40 md:hidden border border-white/10"
           onClick={() => setIsOpen(false)}
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-1.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3 py-2 transition hover:bg-white/5"
+                className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
+                  activeSection === link.href.substring(1)
+                    ? "bg-white/10 text-gold font-semibold"
+                    : "text-white/80 hover:bg-white/5"
+                }`}
               >
                 {link.label}
               </a>
             ))}
           </div>
-          <div className="mt-4 border-t border-white/10 pt-4">
+          <div className="mt-3 border-t border-white/10 pt-3">
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center rounded-full bg-gold px-4 py-2 text-sm font-semibold text-forest shadow-sm"
+              className="inline-flex w-full items-center justify-center rounded-full bg-gold px-4 py-2.5 text-xs font-bold text-forest shadow-sm"
             >
               Contact Me
             </a>

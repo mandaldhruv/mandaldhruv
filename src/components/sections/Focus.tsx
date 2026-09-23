@@ -1,20 +1,20 @@
 export function Focus() {
   return (
-    <section id="skills" className="w-full bg-[#F8F9FA] py-24 scroll-mt-28">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="skills" className="w-full bg-[#F8F9FA] py-12 sm:py-20 lg:py-24 scroll-mt-20 sm:scroll-mt-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <header className="text-center">
-          <p className="text-sm font-semibold tracking-wide text-gray-500">— What I Solve</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-forest">
+          <p className="text-xs sm:text-sm font-semibold tracking-wide text-gray-500">— What I Solve</p>
+          <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-forest">
             Problems I’m Built For
           </h2>
         </header>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article className="bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gold/15 text-gold mb-6">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -28,25 +28,25 @@ export function Focus() {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-forest">Language Understanding at Scale</h3>
-            <p className="mt-3 text-sm leading-relaxed text-grayBody">
+            <h3 className="text-lg sm:text-xl font-bold text-forest">Language Understanding at Scale</h3>
+            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-grayBody">
               From document classification to entity extraction — I build NLP
               systems that process thousands of records per minute, trained on your
               domain-specific data.
             </p>
             <a
               href="#projects"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See NLP projects <span aria-hidden="true">→</span>
             </a>
           </article>
 
-          <article className="bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gold/15 text-gold mb-6">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -61,24 +61,24 @@ export function Focus() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-forest">Production LLM Applications</h3>
-            <p className="mt-3 text-sm leading-relaxed text-grayBody">
+            <h3 className="text-lg sm:text-xl font-bold text-forest">Production LLM Applications</h3>
+            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-grayBody">
               RAG pipelines, fine-tuned models, and agentic workflows that go
               beyond demos — architected for reliability, cost-efficiency, and real users.
             </p>
             <a
               href="#projects"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See LLM projects <span aria-hidden="true">→</span>
             </a>
           </article>
 
-          <article className="bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gold/15 text-gold mb-6">
+          <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100/80">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gold/15 text-gold mb-4 sm:mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -88,14 +88,14 @@ export function Focus() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 7v10m10-10v10" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-forest">End-to-End ML Pipelines</h3>
-            <p className="mt-3 text-sm leading-relaxed text-grayBody">
+            <h3 className="text-lg sm:text-xl font-bold text-forest">End-to-End ML Pipelines</h3>
+            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-grayBody">
               Data ingestion to model deployment. I design pipelines on
               Airflow/Prefect that keep models fresh and instrumented — no black boxes.
             </p>
             <a
               href="#projects"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-forest hover:text-gold transition-colors"
+              className="mt-4 sm:mt-6 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-forest hover:text-gold transition-colors"
             >
               See pipeline projects <span aria-hidden="true">→</span>
             </a>
