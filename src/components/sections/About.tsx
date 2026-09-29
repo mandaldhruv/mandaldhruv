@@ -106,8 +106,8 @@ export function About() {
               actually works in production.
             </p>
             <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-white/70 max-w-[520px]">
-              My clients are founders and engineering leads who are tired of
-              AI experiments that never ship. I close that gap.
+              I work best with engineering teams and technical leads who care about
+              AI systems that actually ship and solve real problems.
             </p>
 
             {/* Stats Row */}

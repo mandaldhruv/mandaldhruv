@@ -191,7 +191,7 @@ firebase deploy --only hosting
 | **Projects** | Filterable showcase of ML, NLP, and web projects |
 | **Experience** | Timeline of education and professional roles |
 | **Tech Ecosystem** | Skills with animated percentage counters |
-| **Contact** | Professional inquiry form with budget selection |
+| **Contact** | Recruiter and hiring manager contact form with opportunity type & direct reach-out options |
 
 ---
 

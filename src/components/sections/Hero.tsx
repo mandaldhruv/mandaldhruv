@@ -17,7 +17,7 @@ export function Hero() {
               <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 border border-yellow-500 bg-white"></div>
               <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 border border-yellow-500 bg-white"></div>
               <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 border border-yellow-500 bg-white"></div>
-              <span>Accepting Select Projects · Open to Roles</span>
+              <span>Open to AI/ML Roles · Full-Time &amp; Internships</span>
             </div>
 
             {/* Headline */}
