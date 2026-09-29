@@ -183,7 +183,7 @@ export function Contact() {
                     rel="noreferrer"
                     className="text-xs sm:text-sm md:text-base text-gray-700 font-medium hover:text-[#FFB800] transition-colors"
                   >
-                    linkedin.com/in/dhruvmandal
+                    linkedin.com/in/mandaldhruv
                   </a>
                 </div>
 

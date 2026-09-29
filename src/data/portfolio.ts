@@ -108,7 +108,7 @@ export const siteConfig = {
   cvUrl: "/Dhruv_Mandal_CV.pdf",
   socials: {
     github: "https://github.com/mandaldhruv",
-    linkedin: "https://linkedin.com/in/dhruvmandal",
+    linkedin: "https://www.linkedin.com/in/mandaldhruv/",
     twitter: "https://x.com/mandaldhruv",
   },
 };

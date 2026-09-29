@@ -6,7 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-mandaldhruv.github.io-FFB800?style=for-the-badge&labelColor=1E392A)](https://dhruv-mandal.web.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-mandaldhruv-1E392A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mandaldhruv)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dhruv_Mandal-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dhruvmandal)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dhruv_Mandal-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mandaldhruv/)
 
 <br />
 
@@ -238,7 +238,7 @@ This portfolio is open-source for educational reference. Please do not use it as
 |---------|------|
 | **Email** | [mandaldhruv017@gmail.com](mailto:mandaldhruv017@gmail.com) |
 | **GitHub** | [@mandaldhruv](https://github.com/mandaldhruv) |
-| **LinkedIn** | [Dhruv Mandal](https://linkedin.com/in/dhruvmandal) |
+| **LinkedIn** | [Dhruv Mandal](https://www.linkedin.com/in/mandaldhruv/) |
 | **Location** | Pune, Maharashtra, India 🇮🇳 |
 
 ---
