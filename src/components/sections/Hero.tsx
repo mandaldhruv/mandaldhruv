@@ -109,7 +109,7 @@ export function Hero() {
                     <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
                   </defs>
                   <text fill="white" fontSize="11" fontWeight="700" letterSpacing="3">
-                    <textPath href="#circlePath">OPEN TO PROJECTS ✦ 2026 ✦ AI EXPERT ✦</textPath>
+                    <textPath href="#circlePath">OPEN TO ROLES ✦ 2026 ✦ AI ENGINEER ✦</textPath>
                   </text>
                 </svg>
                 {/* Center arrow */}
